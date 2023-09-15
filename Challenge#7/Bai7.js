@@ -1,8 +1,8 @@
 // Tạo đối tượng cho Mark và John
 const mark = {
     fullName: "Mark Miller",
-    mass: 78, // kg
-    height: 1.69, // meters
+    mass: 78, 
+    height: 1.69, 
     calcBMI: function() {
         this.bmi = this.mass / (this.height ** 2);
         return this.bmi;
@@ -11,8 +11,8 @@ const mark = {
 
 const john = {
     fullName: "John Smith",
-    mass: 92, // kg
-    height: 1.95, // meters
+    mass: 92, 
+    height: 1.95, 
     calcBMI: function() {
         this.bmi = this.mass / (this.height ** 2);
         return this.bmi;

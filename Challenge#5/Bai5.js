@@ -10,11 +10,11 @@ const tinhDiemTrungBinh = (diem) => diem.reduce((tong, diem) => tong + diem, 0) 
 
 const kiemTraNguoiThang = (avgDolphins, avgKoalas) => {
   if (avgDolphins >= 2 * avgKoalas) {
-    console.log(`Dolphins thắng (${avgDolphins} vs. ${avgKoalas})`);
+    console.log(`Dolphins thắng (${avgDolphins} vs ${avgKoalas})`);
   } else if (avgKoalas >= 2 * avgDolphins) {
-    console.log(`Koalas thắng (${avgKoalas} vs. ${avgDolphins})`);
+    console.log(`Koalas thắng (${avgKoalas} vs ${avgDolphins})`);
   } else {
-    console.log("Không có đội nào thắng.");
+    console.log("Không có đội nào thắng");
   }
 };
 

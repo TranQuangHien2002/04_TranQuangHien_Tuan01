@@ -1,0 +1,15 @@
+/* CSS Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: aqua;
+    color: red;
+    text-align: center;
+}
+
+.game {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}

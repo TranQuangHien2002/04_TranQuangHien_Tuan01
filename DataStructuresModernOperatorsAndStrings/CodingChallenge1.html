@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const game = {
+            team1: 'Bayern Munich',
+            team2: 'Borrussia Dortmund',
+            players: [
+                ['Neuer', 'Pavard', 'Lucas', 'Hernandez', 'Davies', 'Kimmich', 'Goretzka', 'Coman', 'Muller', 'Gnarby', 'Lewandowski'],
+                ['Burki', 'Schulz', 'Hummels', 'Akanji', 'Hakimi', 'Weigl', 'Witsel', 'Hazard', 'Brandt', 'Sancho', 'Gotze']
+            ],
+            score: '4:0',
+            scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+            date: 'Nov 9th, 2030',
+            odds: {
+                team1: 1.33,
+                x: 3.25,
+                team2: 6.5
+            }
+        };
+
+        // Tạo một mảng cầu thủ cho mỗi đội (biến 'players1' và 'players2').
+        const players1 = [...game.players[0]];
+        const players2 = [...game.players[1]];
+
+        // Người chơi đầu tiên trong bất kỳ mảng cầu thủ nào là thủ môn 
+        // và những người khác là cầu thủ sân. Đối với Bayern Munich (đội 1), tạo một biến ('gk') với tên thủ môn, 
+        // và một mảng ('fieldPlayers') với tất cả 10 cầu thủ sân còn lại.
+        const gk = players1[0];
+        const fieldPlayers = players1.slice(1);
+
+        // Tạo một mảng 'allPlayers' chứa tất cả cầu thủ của cả hai đội (tổng cộng 22 cầu thủ).
+        const allPlayers = [...players1, ...players2];
+
+        // ạo một mảng mới ('players1Final') chứa tất cả cầu thủ ban đầu của đội 1 cộng với 'Thiago', 'Coutinho' và 'Perisic'.
+        const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+
+        // Dựa trên đối tượng game.odds, tạo một biến cho mỗi tỷ lệ cược (gọi là 'team1', 'draw' và 'team2').
+        const team1 = game.odds.team1;
+        const draw = game.odds.x;
+        const team2 = game.odds.team2;
+
+        // Viết một hàm ('printGoals') nhận một số tên cầu thủ tùy ý 
+        function printGoals(...playerNames) {
+            console.log(playerNames.join(', '));
+            console.log(`Số bàn thắng đã ghi: ${playerNames.length}`);
+        }
+
+        // Đội có tỷ lệ cược thấp hơn có khả năng thắng cao hơn
+        const likelyWinner = team1 < team2 ? 'Đội 1' : team2 < team1 ? 'Đội 2' : 'Hòa';
+        console.log(`Đội có khả năng thắng cao hơn: ${likelyWinner}`);
+
+        // Dữ liệu kiểm tra cho 6
+        printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+        //gọi lại hàm với các cầu thủ từ game.scored
+        printGoals(...game.scored);
+
+    </script>
+</body>
+
+</html>
